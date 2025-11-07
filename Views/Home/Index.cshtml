@@ -1,0 +1,44 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center mt-5">
+    <h1 class="display-4 mb-4">Welcome to Generation Plan MLM</h1>
+    <p class="lead mb-5">Join our network and start earning through referrals</p>
+    
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Level 1 Income</h5>
+                    <h3 class="text-primary">₹100</h3>
+                    <p class="card-text">Per direct referral</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Level 2 Income</h5>
+                    <h3 class="text-success">₹50</h3>
+                    <p class="card-text">Per member in your team</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Level 3 Income</h5>
+                    <h3 class="text-info">₹25</h3>
+                    <p class="card-text">Per member in your team</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <a asp-controller="Account" asp-action="Register" class="btn btn-primary btn-lg me-3">Get Started</a>
+        <a asp-controller="Account" asp-action="Login" class="btn btn-outline-primary btn-lg">Login</a>
+    </div>
+</div>
+

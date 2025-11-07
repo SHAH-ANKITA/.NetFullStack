@@ -1,0 +1,24 @@
+@model Tuple<User, bool, int>
+@{
+    var user = Model.Item1;
+    var isRoot = Model.Item2;
+    var level = Model.Item3;
+}
+
+<div class="tree-node @(isRoot ? "root" : "")">
+    <div class="node-content">
+        <strong>@user.UserId</strong><br>
+        @user.FullName<br>
+        <small>@user.Email</small>
+    </div>
+    @if (user.Referrals.Any() && level < 3)
+    {
+        <div class="tree-children">
+            @foreach (var referral in user.Referrals)
+            {
+                @await Html.PartialAsync("_UserTreeNode", new Tuple<User, bool, int>(referral, false, level + 1))
+            }
+        </div>
+    }
+</div>
+

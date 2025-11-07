@@ -1,0 +1,19 @@
+@model IEnumerable<ReferralNode>
+
+<ul>
+@foreach (var node in Model)
+{
+    <li>
+        <div class="node-content">
+            <strong>@node.UserId</strong>
+            <span>@node.FullName</span>
+            <small>@node.Email</small>
+        </div>
+        @if (node.Children.Any())
+        {
+            @await Html.PartialAsync("_ReferralTree", node.Children)
+        }
+    </li>
+}
+</ul>
+
